@@ -105,7 +105,7 @@ First, merge your modules fir fastutil-extender:
 Module module = Modules.combine(/* your modules */, new FastUtilExtenderFactoriesModule());
 ```
 
-Now factories will be injected to your classes:
+Now factories will be injected into your classes:
 ```java
 class Example {
     
