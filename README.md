@@ -32,13 +32,13 @@ implementation("io.github.blackbaroness:fastutil-extender-common:0.1.0")
 
 ## Features
 
-### 1. Fastest load factors by default.
+### 1. Fastest load factors by default
 
 While doing benchmarks, I realized that load factor 0.25 significantly speeds up
 hash-based collections, wasting just a bit of RAM. If you don't feel sorry for the
 extra 1MB of RAM, this library is for you.
 
-### 2. Cool stateless factories for list and sets
+### 2. Cool stateless factories for lists and sets
 
 ```java
 IntListFactory factory = FastList.ints;
