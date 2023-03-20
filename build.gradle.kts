@@ -47,7 +47,7 @@ subprojects {
                     developers {
                         developer {
                             id.set("blackbaroness")
-                            name.set("Black Baroness")
+                            name.set("BlackBaroness")
                             email.set("shoyurash2@gmail.com")
                         }
                     }
