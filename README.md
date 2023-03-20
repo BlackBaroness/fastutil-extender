@@ -10,7 +10,6 @@ You need Java 8+ to use this.
 Maven:
 
 ```xml
-
 <dependency>
     <dependency>
         <groupId>io.github.blackbaroness</groupId>
