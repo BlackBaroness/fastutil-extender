@@ -3,6 +3,8 @@
 Don't waste your time by specifying a load factor, creating convertation algorithms and
 collectors and other boring boilerplate things!
 
+You need Java 8+ to use this.
+
 ## Import to your project
 
 Maven:
@@ -13,7 +15,7 @@ Maven:
     <dependency>
         <groupId>io.github.blackbaroness</groupId>
         <artifactId>fastutil-extender-common</artifactId>
-        <version>0.1.0</version>
+        <version>1.0.0</version>
     </dependency>
 </dependency>
 ```
@@ -71,8 +73,8 @@ IntStream.of(1, 2, 3).boxed().collect(factory.unmodifiableCollector());
 IntList list = factory.builder()
     .size(100)
     .content(1, 2, 3)
-    .threadsafe(true)
-    .unmodifiable(true)
+    .threadsafe()
+    .unmodifiable()
     .build();
 ```
 
@@ -99,7 +101,7 @@ FastMap.synchronize(FastMap.newByte2FloatMap());
 
 You must add `fastutil-extender-guice` module for this.
 
-First, merge your modules fir fastutil-extender:
+Combine your modules with fastutil-extender:
 
 ```java
 Module module = Modules.combine(/* your modules */, new FastUtilExtenderFactoriesModule());

@@ -7,7 +7,7 @@ plugins {
 
 allprojects {
     group = "io.github.blackbaroness"
-    version = "0.1.0-SNAPSHOT"
+    version = "1.0.0"
 }
 
 subprojects {
@@ -28,11 +28,10 @@ subprojects {
         testImplementation("org.junit.jupiter:junit-jupiter:5.9.2")
     }
 
-    tasks.named<Test>("test") {
-        useJUnitPlatform()
-    }
-
     java {
+        val javaVersion = JavaVersion.VERSION_1_8
+        sourceCompatibility = javaVersion
+        targetCompatibility = javaVersion
         withJavadocJar()
         withSourcesJar()
     }
@@ -42,6 +41,16 @@ subprojects {
             create<MavenPublication>("mavenJava") {
                 from(components["java"])
                 pom {
+                    name.set(project.name)
+                    description.set(project.name)
+                    url.set("https://github.com/BlackBaroness/fastutil-extender")
+                    developers {
+                        developer {
+                            id.set("blackbaroness")
+                            name.set("Black Baroness")
+                            email.set("shoyurash2@gmail.com")
+                        }
+                    }
                     licenses {
                         license {
                             name.set("The MIT License")
@@ -74,9 +83,20 @@ subprojects {
         sign(publishing.publications["mavenJava"])
     }
 
-    tasks.javadoc {
-        if (JavaVersion.current().isJava9Compatible) {
-            (options as StandardJavadocDocletOptions).addBooleanOption("html5", true)
+    tasks {
+        javadoc {
+            options.encoding = "UTF-8"
+            if (JavaVersion.current().isJava9Compatible) {
+                (options as StandardJavadocDocletOptions).addBooleanOption("html5", true)
+            }
+        }
+
+        test {
+            useJUnitPlatform()
+        }
+
+        withType<JavaCompile> {
+            options.encoding = "UTF-8"
         }
     }
 }
