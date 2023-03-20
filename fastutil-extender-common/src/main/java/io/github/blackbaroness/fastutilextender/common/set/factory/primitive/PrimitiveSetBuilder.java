@@ -1,6 +1,5 @@
 package io.github.blackbaroness.fastutilextender.common.set.factory.primitive;
 
-import io.github.blackbaroness.fastutilextender.common.set.factory.ObjectSetBuilder;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.checkerframework.checker.index.qual.Positive;

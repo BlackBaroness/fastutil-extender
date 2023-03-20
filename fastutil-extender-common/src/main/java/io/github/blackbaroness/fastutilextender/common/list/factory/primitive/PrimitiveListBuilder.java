@@ -1,6 +1,5 @@
 package io.github.blackbaroness.fastutilextender.common.list.factory.primitive;
 
-import io.github.blackbaroness.fastutilextender.common.set.factory.primitive.PrimitiveSetBuilder;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.checkerframework.checker.index.qual.Positive;
@@ -66,7 +65,7 @@ public class PrimitiveListBuilder<P, L extends List<P>, F extends Predicate<P>> 
 
     @SideEffectFree
     public @NotNull L build() {
-        L  result;
+        L result;
 
         if (size != -1) {
             result = factory.create();

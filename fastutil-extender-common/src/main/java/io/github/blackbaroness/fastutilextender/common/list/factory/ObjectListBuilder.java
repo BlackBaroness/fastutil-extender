@@ -1,6 +1,5 @@
 package io.github.blackbaroness.fastutilextender.common.list.factory;
 
-import io.github.blackbaroness.fastutilextender.common.set.factory.primitive.PrimitiveSetBuilder;
 import it.unimi.dsi.fastutil.objects.ObjectList;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;

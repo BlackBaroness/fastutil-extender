@@ -64,7 +64,7 @@ public class ObjectSetBuilder<T> {
 
     @SideEffectFree
     public @NotNull ObjectSet<T> build() {
-        ObjectSet<T>  result;
+        ObjectSet<T> result;
 
         if (size != -1) {
             result = factory.create();
