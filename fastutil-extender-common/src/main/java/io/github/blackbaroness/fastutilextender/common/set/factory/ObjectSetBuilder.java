@@ -35,6 +35,14 @@ public class ObjectSetBuilder<T> {
         return this;
     }
 
+    public @This ObjectSetBuilder<T> threadsafe() {
+        return threadsafe(true);
+    }
+
+    public @This ObjectSetBuilder<T> unmodifiable() {
+        return unmodifiable(true);
+    }
+
     public @This ObjectSetBuilder<T> content(@NonNull Collection<T> source) {
         setContent(factory.of(source));
         return this;
@@ -56,10 +64,15 @@ public class ObjectSetBuilder<T> {
 
     @SideEffectFree
     public @NotNull ObjectSet<T> build() {
-        ObjectSet<T> result = size == -1 ? factory.create() : factory.create(size);
+        ObjectSet<T>  result;
 
-        if (content != null) {
-            result.addAll(content);
+        if (size != -1) {
+            result = factory.create();
+            if (content != null) result.addAll(content);
+        } else if (content != null) {
+            result = factory.of(content);
+        } else {
+            result = factory.create();
         }
 
         if (threadsafe) {

@@ -1,5 +1,6 @@
 package io.github.blackbaroness.fastutilextender.common.set.factory.primitive;
 
+import io.github.blackbaroness.fastutilextender.common.set.factory.ObjectSetBuilder;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.checkerframework.checker.index.qual.Positive;
@@ -36,6 +37,14 @@ public class PrimitiveSetBuilder<P, L extends Set<P>, F extends Predicate<P>> {
         return this;
     }
 
+    public @This PrimitiveSetBuilder<P, L, F> threadsafe() {
+        return threadsafe(true);
+    }
+
+    public @This PrimitiveSetBuilder<P, L, F> unmodifiable() {
+        return unmodifiable(true);
+    }
+
     public @This PrimitiveSetBuilder<P, L, F> content(@NonNull Collection<P> source) {
         setContent(factory.of(source));
         return this;
@@ -57,10 +66,15 @@ public class PrimitiveSetBuilder<P, L extends Set<P>, F extends Predicate<P>> {
 
     @SideEffectFree
     public @NotNull L build() {
-        L result = size == -1 ? factory.create() : factory.create(size);
+        L result;
 
-        if (content != null) {
-            result.addAll(content);
+        if (size != -1) {
+            result = factory.create();
+            if (content != null) result.addAll(content);
+        } else if (content != null) {
+            result = factory.of(content);
+        } else {
+            result = factory.create();
         }
 
         if (threadsafe) {

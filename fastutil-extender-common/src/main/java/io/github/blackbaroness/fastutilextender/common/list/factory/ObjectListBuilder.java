@@ -1,5 +1,6 @@
 package io.github.blackbaroness.fastutilextender.common.list.factory;
 
+import io.github.blackbaroness.fastutilextender.common.set.factory.primitive.PrimitiveSetBuilder;
 import it.unimi.dsi.fastutil.objects.ObjectList;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
@@ -35,6 +36,14 @@ public class ObjectListBuilder<T> {
         return this;
     }
 
+    public @This ObjectListBuilder<T> threadsafe() {
+        return threadsafe(true);
+    }
+
+    public @This ObjectListBuilder<T> unmodifiable() {
+        return unmodifiable(true);
+    }
+
     public @This ObjectListBuilder<T> content(@NonNull Collection<T> source) {
         setContent(factory.of(source));
         return this;
@@ -56,10 +65,15 @@ public class ObjectListBuilder<T> {
 
     @SideEffectFree
     public @NotNull ObjectList<T> build() {
-        ObjectList<T> result = size == -1 ? factory.create() : factory.create(size);
+        ObjectList<T> result;
 
-        if (content != null) {
-            result.addAll(content);
+        if (size != -1) {
+            result = factory.create();
+            if (content != null) result.addAll(content);
+        } else if (content != null) {
+            result = factory.of(content);
+        } else {
+            result = factory.create();
         }
 
         if (threadsafe) {
