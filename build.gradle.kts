@@ -7,7 +7,7 @@ plugins {
 
 allprojects {
     group = "io.github.blackbaroness"
-    version = "1.0.0"
+    version = "1.1.0"
 }
 
 subprojects {

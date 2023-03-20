@@ -105,8 +105,14 @@ public class ObjectSetFactory {
         return ObjectSets.unmodifiable(Set);
     }
 
+    @Deprecated
     @Contract(value = "-> new", pure = true)
     public @NotNull <T> ObjectSetBuilder<T> builder() {
+        return new ObjectSetBuilder<>(this);
+    }
+
+    @Contract(value = "_ -> new", pure = true)
+    public @NotNull <T> ObjectSetBuilder<T> builder(@NotNull Class<T> type) {
         return new ObjectSetBuilder<>(this);
     }
 }

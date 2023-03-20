@@ -1,5 +1,6 @@
 package io.github.blackbaroness.fastutilextender.common.list.factory;
 
+import io.github.blackbaroness.fastutilextender.common.set.factory.ObjectSetBuilder;
 import it.unimi.dsi.fastutil.Hash;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import it.unimi.dsi.fastutil.objects.ObjectList;
@@ -91,8 +92,14 @@ public class ObjectListFactory {
         return ObjectLists.unmodifiable(list);
     }
 
+    @Deprecated
     @Contract(value = "-> new", pure = true)
     public @NotNull <T> ObjectListBuilder<T> builder() {
+        return new ObjectListBuilder<>(this);
+    }
+
+    @Contract(value = "_ -> new", pure = true)
+    public @NotNull <T> ObjectListBuilder<T> builder(@NotNull Class<T> type) {
         return new ObjectListBuilder<>(this);
     }
 }

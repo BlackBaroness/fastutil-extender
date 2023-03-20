@@ -1,8 +1,6 @@
 package io.github.blackbaroness.fastutilextender.common.list.factory.primitive;
 
 import io.github.blackbaroness.fastutilextender.common.list.factory.primitive.impl.IntListFactory;
-import io.github.blackbaroness.fastutilextender.common.map.FastMap;
-import it.unimi.dsi.fastutil.Pair;
 import it.unimi.dsi.fastutil.ints.IntList;
 import org.junit.jupiter.api.Test;
 
