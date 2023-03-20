@@ -11,11 +11,9 @@ Maven:
 
 ```xml
 <dependency>
-    <dependency>
-        <groupId>io.github.blackbaroness</groupId>
-        <artifactId>fastutil-extender-common</artifactId>
-        <version>1.0.0</version>
-    </dependency>
+    <groupId>io.github.blackbaroness</groupId>
+    <artifactId>fastutil-extender-common</artifactId>
+    <version>1.0.0</version>
 </dependency>
 ```
 

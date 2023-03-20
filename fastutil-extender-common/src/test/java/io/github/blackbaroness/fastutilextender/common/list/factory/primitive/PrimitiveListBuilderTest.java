@@ -25,20 +25,5 @@ class PrimitiveListBuilderTest {
         assertEquals(1, list.getInt(0));
         assertEquals(2, list.getInt(1));
         assertEquals(3, list.getInt(2));
-
-        // default
-        FastMap.newMap();
-
-        // with size
-        FastMap.newByte2ShortSortedMap(30);
-
-        // of pairs (currently only for objects)
-        FastMap.newMap(
-                Pair.of("s1", "s2")
-        );
-
-        // make unmodifiable or synchronized
-        FastMap.unmodifiable(FastMap.newInt2IntMap());
-        FastMap.synchronize(FastMap.newByte2FloatMap());
     }
 }
