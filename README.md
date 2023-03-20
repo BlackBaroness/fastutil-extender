@@ -1,6 +1,6 @@
 ## Extension built under a [fastutil](https://github.com/vigna/fastutil) library
 
-Don't waste your time by specifying a load factor, creating convertation algorithms and
+Don't waste your time by specifying a load factor, creating convertation algorithms,
 collectors and other boring boilerplate things!
 
 You need Java 8+ to use this.
