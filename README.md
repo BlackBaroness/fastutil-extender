@@ -13,20 +13,20 @@ Maven:
 <dependency>
     <groupId>io.github.blackbaroness</groupId>
     <artifactId>fastutil-extender-common</artifactId>
-    <version>1.0.0</version>
+    <version>1.2.0</version>
 </dependency>
 ```
 
 Gradle (Groovy SDK):
 
 ```groovy
-implementation 'io.github.blackbaroness:fastutil-extender-common:0.1.0'
+implementation 'io.github.blackbaroness:fastutil-extender-common:1.2.0'
 ```
 
 Gradle (Kotlin SDK):
 
 ```kotlin
-implementation("io.github.blackbaroness:fastutil-extender-common:0.1.0")
+implementation("io.github.blackbaroness:fastutil-extender-common:1.2.0")
 ```
 
 ## Features
