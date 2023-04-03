@@ -1,6 +1,5 @@
 package io.github.blackbaroness.fastutilextender.common.list.factory;
 
-import io.github.blackbaroness.fastutilextender.common.set.factory.ObjectSetBuilder;
 import it.unimi.dsi.fastutil.Hash;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import it.unimi.dsi.fastutil.objects.ObjectList;
@@ -100,6 +99,6 @@ public class ObjectListFactory {
 
     @Contract(value = "_ -> new", pure = true)
     public @NotNull <T> ObjectListBuilder<T> builder(@NotNull Class<T> type) {
-        return new ObjectListBuilder<>(this);
+        return builder();
     }
 }
