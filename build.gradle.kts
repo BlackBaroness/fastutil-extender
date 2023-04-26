@@ -25,7 +25,7 @@ subprojects {
         compileOnly("org.jetbrains:annotations:24.0.1")
         compileOnly("org.checkerframework:checker-qual:3.32.0")
 
-        testImplementation("org.junit.jupiter:junit-jupiter:5.9.2")
+        testImplementation("org.junit.jupiter:junit-jupiter:5.9.3")
     }
 
     java {
