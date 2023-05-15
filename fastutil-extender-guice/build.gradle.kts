@@ -1,5 +1,5 @@
 dependencies {
     api(project(":fastutil-extender-common"))
-    api("com.google.inject:guice:5.1.0")
+    api("com.google.inject:guice:7.0.0")
 }
 
