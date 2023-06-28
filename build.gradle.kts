@@ -2,7 +2,7 @@ plugins {
     `java-library`
     `maven-publish`
     signing
-    id("io.freefair.lombok") version "8.0.1" apply false
+    id("io.freefair.lombok") version "8.1.0" apply false
 }
 
 allprojects {
